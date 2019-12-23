@@ -1,7 +1,6 @@
 # Title / Machine Learning Model Test (업로드예정)
 * Classification Classification Classification of Credit Approval Data Set by UCI Machine Learning Lab
 * UCI data repository 중에서 credit approval data set을 선택하여 credit 유무의 이진 분류로 결정하는 문제를 기계학습모델을 이용하여 해결한다.
-* 사용후 star 한번씩만 눌러주시면 감사하겠습니다
 
 Credit Approval Dataset:
 *  http://archive.ics.uci.edu/ml/datasets/Credit+Approval
