@@ -15,6 +15,7 @@ Credit Approval Dataset:
 * step4: 학습모델의 학습 및 평가는 10-fold 평가방법을 사용한다; 즉, 전체 자료를 10등분한 후에 9 등분을 학습에 나머지 한 등분을 평가에 사용한다. 그리고 이
 과정을 10번 반복한 후에 평균을 내어 각 학습모델을 평가한다
 
+## 
 
 ## Limitations
 Cononcal model과 Committee machine의 경우 Scikit-learn의 패키지 사용함. Multilayer perceptron의 경우 정확도(accuracy)가 0.6내외로 평가됨.
