@@ -6,7 +6,9 @@ Credit Approval Dataset:
 *  http://archive.ics.uci.edu/ml/datasets/Credit+Approval
 
 ## Installation
-* Python 3.x 버젼으로 구축되어있습니다. 파이썬 기본환경을 세팅해 주십시오.
+* Python 3.x 버젼으로 구축되어있습니다.
+* Anaconda 와 Spyder 환경에서 작동하였습니다.
+* 코드상 패키지를 pip명령어를 사용해 설치하여 주십시오.
 
 ## Process
 * step1: Canonical Models의 Decision Tree와 Multilayer perceptron을 평가
