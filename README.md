@@ -21,6 +21,7 @@ Credit Approval Dataset:
 ## Step2: Committe Machine (Random Forest)
 ## Step3: Deep Learning Model (CNN)
 ## Step4: 학습모델 평가
+## Step5: 결론
 
 ## Limitations
 Cononcal model과 Committee machine의 경우 Scikit-learn의 패키지 사용함. Multilayer perceptron의 경우 정확도(accuracy)가 0.6내외로 평가됨.
