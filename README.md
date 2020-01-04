@@ -18,6 +18,8 @@ Credit Approval Dataset:
 과정을 10번 반복한 후에 평균을 내어 각 학습모델을 평가한다
 
 ## Step1: Cononcial Model (Decision Tree & Mulitilayer perceptron)
+### Decision tree
+ Binary classification을 하기 위해, 먼저 정규 모델의 Decision Tree 모델을 사용했다 Decision Tree의 깊이는 3으로 설정하였으며, 모델의 Overfitting을 방지하였다. 그리고 엔트로피를 불순도 계산 방법으로 적용하여 모델을 학습시켰다.
 ## Step2: Committe Machine (Random Forest)
 ## Step3: Deep Learning Model (CNN)
 ## Step4: 학습모델 평가
