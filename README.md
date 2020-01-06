@@ -35,7 +35,6 @@ MLP (Multilayer perceptron)은 일종의 피트포워드 인공 신경망이다.
 ## Step6: 결론
 
 ## Limitations
-Cononcal model과 Committee machine의 경우 Scikit-learn의 패키지 사용함. Multilayer perceptron의 경우 정확도(accuracy)가 0.6내외로 평가됨.
 
 ## Contact
 작동에 문제가 생기시거나 궁금한점이 있으시면 연락주시면 감사하겠습니다 [https://ck992.github.io/](https://ck992.github.io/).
