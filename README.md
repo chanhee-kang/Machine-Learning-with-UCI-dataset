@@ -16,6 +16,8 @@ Credit Approval Dataset:
 * step3: Deep learning Model의 CNN모델을 평가
 * step4: 학습모델의 학습 및 평가는 10-fold 평가방법을 사용한다; 즉, 전체 자료를 10등분한 후에 9 등분을 학습에 나머지 한 등분을 평가에 사용한다. 그리고 이
 과정을 10번 반복한 후에 평균을 내어 각 학습모델을 평가한다
+## Data Type
+A1 부터 A16까지의 attribute가 존재하며 연속형 데이터와 비 연속형데이터가 존재한다. 또한 “?”의 결측 값 역시 존재한다. 또한 이진분류를 위한 target data는 +,-형태로 A16에 나타나 있다.
 
 ## Step1: Cononcial Model (Decision Tree & Mulitilayer perceptron)
 ### Decision tree
