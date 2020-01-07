@@ -25,7 +25,8 @@ A1 부터 A16까지의 attribute가 존재하며 연속형 데이터와 비 연�
 ## Data Preprocessing
 “Credit approval dataset”의 attribute는 총 16개로 이루어져 있으며 연속 및 불연속데이터가 혼합 되어있다. 기계학습 모델에 적용시키기 위해선 그림2 의 dataframe을 모델에 맞게 데이터 전처리 과정을 해야한다. 데이터 전처리과정은 먼저 dataframe형태로 진행되었으며, “?”로 표기된 결측치를 제거시켜 주었다. 
 
-또한 A2, A3, A8, A11, A14, A15의 연속형 데이터를 float형태로 데이터 타입을 변경하여 주었다. 속성과 클래스를 다음과 같이 분리시켜 준다. 이진 분류를 결정하는 문제이므로 A16에 존재하는 +,- 데이터를 target으로 선정한 후 0과 1의 형태로 변환 시켜 준다. 또한 학습 및 예측에 사용될 데이터를 나눠 주었다. 
+또한 A2, A3, A8, A11, A14, A15의 연속형 데이터를 float형태로 데이터 타입을 변경하여 주었다. 속성과 클래스를 다음과 같이 분리시켜 준다. 이진 분류를 결정하는 문제이므로 A16에 존재하는 +,- 데이터를 target으로 선정한 후 0과 1의 형태로 변환 시켜 준다. 또한 학습 및 예측에 사용될 데이터를 나눠 주었다.
+
 ![그림1](https://user-images.githubusercontent.com/26376653/71790654-e2f0e880-3074-11ea-9368-c513cbe9a53b.png)
 
 ## Step2: Cononcial Model
@@ -50,6 +51,7 @@ CNN(Convolutional Neural Network)은 MLP에 합성곱 계층과 풀링 계층이
 ## Step5: 학습모델 평가
 ### 5.1 K-fold 평가기법(k=10)
 각 학습모델의 학습 및 평가는 10-fold 평가 방법을 사용 하였다. 전체 자료를 10등분한 후에 9 등분을 학습에 나머지 한 등분을 평가에 사용하며 이 과정을 10번 반복한 후에 평균을 내어 각 모델을 평가 하는 기법이다.  또한 각 모델의 평가의 측도로 Accuracy, Precision, Recall, 그리고 F-1 score를 사용하였다.
+
 ![image](https://user-images.githubusercontent.com/26376653/71865253-890c2380-3145-11ea-917d-42fb017afb4d.png)
 
 ## Step6: 평가 결과 비교 분석
