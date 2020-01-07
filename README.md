@@ -50,6 +50,8 @@ CNN(Convolutional Neural Network)은 MLP에 합성곱 계층과 풀링 계층이
 ## Step5: 학습모델 평가
 ### 5.1 K-fold 평가기법(k=10)
 각 학습모델의 학습 및 평가는 10-fold 평가 방법을 사용 하였다. 전체 자료를 10등분한 후에 9 등분을 학습에 나머지 한 등분을 평가에 사용하며 이 과정을 10번 반복한 후에 평균을 내어 각 모델을 평가 하는 기법이다.  또한 각 모델의 평가의 측도로 Accuracy, Precision, Recall, 그리고 F-1 score를 사용하였다.
+![image](https://user-images.githubusercontent.com/26376653/71865253-890c2380-3145-11ea-917d-42fb017afb4d.png)
+
 ## Step6: 평가 결과 비교 분석
 Accuracy와 Precision이 제일 높게 나온 모델은 각각 0.902, 0.855로 Random Forest 모델이며 Recall 과 F-1 Score의 경우 CNN 모델이 각각 0.870, 0.83으로 제일 높은 수치를 보여주었다. 총 4가지 모델 중 Multilayer perceptron 모델의 평가가 다른 모델에 비해 낮은 수치를 보여 주었으며 Multilayer perceptron 과 CNN 모델이 타 모델에 비해 높은 수치를 보여 주었다. 10-fold 기법을 사용하여 평가를 내보았을 때, Random Forest, CNN, Decision Tree 모델을 사용하는 것이 UCI dataset의 일부인 credit approval dataset을 이진분류하기에 적합한 모델이라 판단된다. 
 
