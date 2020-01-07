@@ -34,9 +34,21 @@ MLP (Multilayer perceptron)은 일종의 피트포워드 인공 신경망이다.
 Random Forest는 앙상블 방법으로 여러 개의 decision tree로 이루어져 있다. 먼저 random forest를 구현하기 위해선 많은 양의 decision tree가 필요하며 각각의 tree는 target에 대한 예측을 잘 수행되어야 하며 다른 tree와는 구별되어야 한다. 또한 각각의 tree는 독립적으로 만들어져야 하며 알고리즘은 각 tree가 고유하게 만들어지기 위해 무작위 선택을 한다. 따라서 tree를 구축하기 전에 dataset의 bootstrap sample 및 전체 dataset중에서 무작위로 데이터를 전체 데이터의 개수만큼 중복 및 반복을 하여 샘플을 만든다. 그리고 이 샘플 데이터에 기초하여 decision tree를 생성한다. Scikit-learn이 제공하는 random forest API는 bootstrap 샘플의 크기 n의 값으로 기존 training dataset의 전체 개수와 같은 수를 할당 하여주며, 데이터 특성 값을 중복 허용 없이 위해 필요한 값을 데이터 전체 특성의 개수의 제곱근으로 할당하여 준다. 이 모델에서 선정한 parameter 는 생성할 decision tree, tree의 깊이, 불순도 계산 방법이다. 해당 모델에서는 총 100개의 decision tree를 생성하였으며 over fitting 방지를 위해 tree의 최대 깊이를 3으로 선정하고 entropy를 불순도 계산방법으로 선정 하였다.
 ## Step4: Deep Learning Model
 ### 4.1 CNN
+CNN(Convolutional Neural Network)은 MLP에 합성곱 계층과 풀링 계층이라는 고유의 구조를 더한 Neural Network이라고 할 수 있다. 여기서 합성곱 계층은 필터, 혹은 커널이라고 하는 작은 수용 영역을 통해 데이터를 인식하는 계층이고, 풀링 레이어는 특정 영역에서 최대값만 추출하거나, 평균값을 추출하여 차원을 축소하는 역할을 한다. CNN은 MLP에 비해 학습해야 할 파라 미터의 개수가 상대적으로 적어 학습이 빠르다는 장점이 있다. 위의 데이터 셋의 이진 분류를 위한 CNN 모델을 3개의 convolution 계층과 3개의 pooling 계층을 가진 구조를 생성했다. 그리고 이진 분류를 위해 활성화 함수로 LeakyReLU로 설정하였고, 각 convolution 계층 마다 필터의 개수는 32, 64, 128개, 그리고 필터의 사이즈는 모두 (3,3)으로 설정하였다. 그리고 pooling 계층의 pool 사이즈는 모두 (2,2)로 설정하였다. 모델의 요약 구조는 아래와 같다.
+![image](https://user-images.githubusercontent.com/26376653/71864246-a7245480-3142-11ea-92d9-f2920848fc07.png)
 ## Step5: 학습모델 평가
+### 5.1 K-fold 평가기법(k=10)
+각 학습모델의 학습 및 평가는 10-fold 평가 방법을 사용 하였다. 전체 자료를 10등분한 후에 9 등분을 학습에 나머지 한 등분을 평가에 사용하며 이 과정을 10번 반복한 후에 평균을 내어 각 모델을 평가 하는 기법이다.  또한 각 모델의 평가의 측도로 Accuracy, Precision, Recall, 그리고 F-1 score를 사용하였다.
 ## Step6: 결론
+Accuracy와 Precision이 제일 높게 나온 모델은 각각 0.902, 0.855로 Random Forest 모델이며 Recall 과 F-1 Score의 경우 CNN 모델이 각각 0.870, 0.83으로 제일 높은 수치를 보여주었다. 총 4가지 모델 중 Multilayer perceptron 모델의 평가가 다른 모델에 비해 낮은 수치를 보여 주었으며 Multilayer perceptron 과 CNN 모델이 타 모델에 비해 높은 수치를 보여 주었다. 10-fold 기법을 사용하여 평가를 내보았을 때, Random Forest, CNN, Decision Tree 모델을 사용하는 것이 UCI dataset의 일부인 credit approval dataset을 이진분류하기에 적합한 모델이라 판단된다. 
 
+먼저 decision tree는 흔히 의사 결정 트리 라 고 불리는데 이름에서 알 수 있듯이 주로 데이터를 분류 하는데 용이하게 사용된다. 즉, Credit approval dataset 에서 +와 –로 나누어 지는 credit이진 분류를 결정하기 적합하다. 또한 decision tree는 데이터가 특정 범위 안에 들어오도록 하는 정규화 혹은 표준화 같은 데이터 전처리 과정이 크게 필요 없으며 이진 특성과 연속적인 특성이 혼합되어 있을 때도 좋은 성능을 보인다. 본 리포트에선 정확도 0.782으로 높은 수치를 보여주었다. 하지만 decision tree의 단점 역시 존재한다. 단점으로는 사전 가지치기를 사용함에도 over fitting이 되는 경향이 있으며 모델의 일반화 성능이 좋지만은 않다. 따라서 이러한 decision tree의 단점을 보안하기 위하여 decision tree의 앙상블 방법을 사용 할 수 있다.
+
+앙상블은 여러 기계학습 모델을 합치어 성능 높은 모델을 만드는 것이다. 어떠한 dataset이 주어졌을 때, dataset을 나누어 각각 학습시킨 뒤 모델을 합쳐 전체 데이터의 결과를 산출한다. Random forest모델은 학습에 있어서 다수의 decision tree를 구성하고 다수의 decision tree로부터 분류 혹은 회귀분석 결과를 출력함으로써 동작된다. 따라서 decision tree의 문제인 training data에 over fitting 문제를 해결할 수 있다. Random frost의 경우 decision tree에 비해 accuracy, precision, recall, F-1 score방면에서 약 10% 성능이 향상 된 것을 확인 할 수 있다. 
+
+MLP 모델은 입력 층에서 전달되는 값이 은닉 층의 모든 노드로 전달되고 은닉 층 노드의 값은 다시 출력 층 노드로 전달되는 구조인 순전 파 형식을 가진다. 결과에서는 먼저 트레이닝 셋이 과 최적화로 인해 실제 credit approval datasets을 넣어 분류를 하면 정확도가 떨어지는 over fitting 문제와 layer가 깊어지면서 역 전파로 인해 에러를 뒤로 전파하게 되는 데에 문제가 생긴 것으로 보인다.
+
+CNN모델은 위의 ML의 문제를 해결할 수 있다. 먼저 overfitting문제의 경우 정규화를 통해 weight이 너무 커버리지 않게 조절을 할 수 있으며 활성화 함수를 변경함에 있어서 평가의 결과가 더 좋게 나온 것으로 판단된다.
 ## Limitations
 
 ## Contact
