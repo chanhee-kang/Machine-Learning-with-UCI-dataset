@@ -74,6 +74,18 @@ CNN모델은 위의 ML의 문제를 해결할 수 있다. 먼저 overfitting문�
 기계학습 모델에 적용을 위해 연속형 데이터 전처리, target data 전처리등 을 일괄적으로 거쳤으며 각 모델별로 필요한 전처리과정을 다시 거쳤다. Canonical model에선 decision tree 와 multilayer perceptron을 평가하였고 committee machine에선 random forest를 평가하였으며 deep learning 모델에서는 CNN을 평가하였으며 10-fold방식으로 각 4가지 모델을 최종 평가 하였다. 최종 10-fold 결과를 분석하면 이진분류에서는  random forest, cnn, 그리고 decision tree의 성능이 높게 나왔다. 
 
 정확히 비교하자면 random forest – cnn – decision tree – multilayer perceptron의 순으로 나왔지만 앞 3가지 모델은 정확도 0.7이상을 보여주어 평가의 정확도가 높게 나왔다. Multilayer perceptron의 경우 over fitting 문제와 역전파 현상으로 정확도가 0.6의 수치를 보였지만 추가 모델 개발을 통해 성능을 향상시킬 여지가 있어 보인다.
+## 참고문헌
+Bhukya, D. and Ramachandram, S. (2010). Decision Tree Induction: An Approach for Data Classification Using AVL-Tree. International Journal of Computer and Electrical Engineering, pp.660-665.
+
+Chen, L. and Tang, H. (2004). Improved computation of beliefs based on confusion matrix for combining multiple classifiers. Electronics Letters, 40(4), p.238.
+
+Fourie, C. (2003). Deep learning? What deep learning?. South African Journal of Higher Education, 17(1).
+Koo, I., Lee, N. and Kil, R. (2008). Parameterized cross-validation for nonlinear regression models. Neurocomputing, 71(16-18), pp.3089-3095.
+
+Mantas, C., Castellano, J., Moral-García, S. and Abellán, J. (2018). A comparison of random forest based algorithms: random credal random forest versus oblique random forest. Soft Computing, 23(21), pp.10739-10754.
+ Mühlenbein, H. (1990). Limitations of multi-layer perceptron networks - steps towards genetic neural networks. Parallel Computing, 14(3), pp.249-260.
+ 
+Uchida, K., Tanaka, M. and Okutomi, M. (2018). Coupled convolution layer for convolutional neural network. Neural Networks, 105, pp.197-205.
 ## Limitations
 
 ## Contact
