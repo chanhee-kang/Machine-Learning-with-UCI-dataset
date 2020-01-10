@@ -73,6 +73,7 @@ MLP 모델은 입력 층에서 전달되는 값이 은닉 층의 모든 노드�
 CNN모델은 위의 ML의 문제를 해결할 수 있다. 먼저 overfitting문제의 경우 정규화를 통해 weight이 너무 커버리지 않게 조절을 할 수 있으며 활성화 함수를 변경함에 있어서 평가의 결과가 더 좋게 나온 것으로 판단된다.
 
 ## Step7: 결론
+이진 분류 문제에서 각각의 기계학습 모델의 효울성에 대해 알아보자고 하였다.
 기계학습의 3가지 모델인 canonical model, committee machine, deep learning모델을 사용하여 UCI dataset의 credit approval datasets을 이진 분류로 평가하였다. 해당 dataset은 신용카드 어플리케이션과 관련이 있어 개인정보 보호를 위하여 모든 속성값이 의미 없는 기호로 변경이 되어있었다. 또한 결측 값 및 모델에 맞춰 전처리 과정을 거쳐야 하였다. 
 
 기계학습 모델에 적용을 위해 연속형 데이터 전처리, target data 전처리등 을 일괄적으로 거쳤으며 각 모델별로 필요한 전처리과정을 다시 거쳤다. Canonical model에선 decision tree 와 multilayer perceptron을 평가하였고 committee machine에선 random forest를 평가하였으며 deep learning 모델에서는 CNN을 평가하였으며 10-fold방식으로 각 4가지 모델을 최종 평가 하였다. 최종 10-fold 결과를 분석하면 이진분류에서는  random forest, cnn, 그리고 decision tree의 성능이 높게 나왔다. 
