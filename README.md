@@ -25,7 +25,7 @@ Credit Approval Dataset:
 ## Data Type
 A1 부터 A16까지의 attribute가 존재하며 연속형 데이터와 비 연속형데이터가 존재한다. 또한 “?”의 결측 값 역시 존재한다. 또한 이진분류를 위한 target data는 +,-형태로 A16에 나타나 있다.
 ![uci](https://user-images.githubusercontent.com/26376653/71790545-5cd4a200-3074-11ea-8710-a2f2ffe1e130.png)
-## Data Preprocessing
+## Step1: Data Preprocessing
 “Credit approval dataset”의 attribute는 총 16개로 이루어져 있으며 연속 및 불연속데이터가 혼합 되어있다. 기계학습 모델에 적용시키기 위해선 그림2 의 dataframe을 모델에 맞게 데이터 전처리 과정을 해야한다. 데이터 전처리과정은 먼저 dataframe형태로 진행되었으며, “?”로 표기된 결측치를 제거시켜 주었다. 
 
 또한 A2, A3, A8, A11, A14, A15의 연속형 데이터를 float형태로 데이터 타입을 변경하여 주었다. 속성과 클래스를 다음과 같이 분리시켜 준다. 이진 분류를 결정하는 문제이므로 A16에 존재하는 +,- 데이터를 target으로 선정한 후 0과 1의 형태로 변환 시켜 준다. 또한 학습 및 예측에 사용될 데이터를 나눠 주었다.
